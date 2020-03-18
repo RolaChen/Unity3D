@@ -36,6 +36,7 @@ public class Login : MonoBehaviour
         if (ConnectMySql.instance.login(address, password))
         {
             _message.text = "登入成功";
+            SceneManager.LoadScene("SimpleTown_DemoScene");
         }
         else
             _message.text = "用户名或密码错误";
