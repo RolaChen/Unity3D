@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
 public class Login : MonoBehaviour
 {
+    private string url = "http://106.14.161.155/QianZhi/login.php";
     private InputField _inputAccount;
     private InputField _inputPassword;
     private Button _btnLogin;
@@ -33,13 +35,36 @@ public class Login : MonoBehaviour
         //Debug.Log(PlayerPrefs.GetString("login"));
         string address = _inputAccount.text;
         string password = _inputPassword.text;
-        if (ConnectMySql.instance.login(address, password))
-        {
-            _message.text = "登入成功";
-            SceneManager.LoadScene("SimpleTown_DemoScene");
-        }
-        else
-            _message.text = "用户名或密码错误";
+        StartCoroutine(login(address, password));
+    }
 
+    IEnumerator login(string address,string password)
+    {
+        WWWForm add = new WWWForm();
+        add.AddField("name", address);
+        add.AddField("password", password);
+        UnityWebRequest webRequest = UnityWebRequest.Post(url, add);
+        yield return webRequest.SendWebRequest();
+        //异常处理，很多博文用了error!=null这是错误的，请看下文其他属性部分
+        if (webRequest.isHttpError || webRequest.isNetworkError)
+            Debug.Log(webRequest.error);
+        else
+        {
+            string information = webRequest.downloadHandler.text.ToString();
+            string[] get = information.Split('%');
+            if (get[0] == "登录成功")
+            {
+                PlayerPrefs.SetString("name", address);
+                PlayerPrefs.SetString("id", get[1]);
+                PlayerPrefs.SetString("career", get[2]);
+                PlayerPrefs.SetString("home", get[3]);
+                PlayerPrefs.SetString("money", get[4]);
+                PlayerPrefs.SetString("experience", get[5]);
+                PlayerPrefs.SetString("hunger", get[6]);
+                PlayerPrefs.SetString("level", get[7]);
+                SceneManager.LoadScene("SimpleTown_DemoScene");
+            }
+            _message.text = get[0];          
+        }
     }
 }
