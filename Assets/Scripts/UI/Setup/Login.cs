@@ -54,14 +54,23 @@ public class Login : MonoBehaviour
             string[] get = information.Split('%');
             if (get[0] == "登录成功")
             {
-                PlayerPrefs.SetString("name", address);
-                PlayerPrefs.SetString("id", get[1]);
-                PlayerPrefs.SetString("career", get[2]);
-                PlayerPrefs.SetString("home", get[3]);
-                PlayerPrefs.SetString("money", get[4]);
-                PlayerPrefs.SetString("experience", get[5]);
-                PlayerPrefs.SetString("hunger", get[6]);
-                PlayerPrefs.SetString("level", get[7]);
+                PlayerData.instance.name = address;
+                PlayerData.instance.id = get[1];
+                PlayerData.instance.career = get[2];
+                PlayerData.instance.home = get[3];
+                PlayerData.instance.money = int.Parse(get[4]);
+                PlayerData.instance.experience = int.Parse(get[5]);
+                PlayerData.instance.hunger = int.Parse(get[6]);
+                PlayerData.instance.level = get[7];
+
+                //PlayerPrefs.SetString("name", address);
+                //PlayerPrefs.SetString("id", get[1]);
+                //PlayerPrefs.SetString("career", get[2]);
+                //PlayerPrefs.SetString("home", get[3]);
+                //PlayerPrefs.SetString("money", get[4]);
+                //PlayerPrefs.SetString("experience", get[5]);
+                //PlayerPrefs.SetString("hunger", get[6]);
+                //PlayerPrefs.SetString("level", get[7]);
                 SceneManager.LoadScene("SimpleTown_DemoScene");
             }
             _message.text = get[0];          

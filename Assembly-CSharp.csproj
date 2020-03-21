@@ -65,10 +65,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\CameraController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Singleton.cs" />
+    <Compile Include="Assets\Scripts\UI\Setup\Exit.cs" />
     <Compile Include="Assets\Scripts\UI\Setup\Login.cs" />
     <Compile Include="Assets\Scripts\UI\Setup\SelectRole.cs" />
-    <Compile Include="Assets\Scripts\UI\Setup\Singleton.cs" />
     <Compile Include="Assets\Scripts\UserData.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/Unity3D/Project/QianZhi/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
