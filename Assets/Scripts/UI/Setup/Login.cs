@@ -12,30 +12,40 @@ public class Login : MonoBehaviour
     private InputField _inputAccount;
     private InputField _inputPassword;
     private Button _btnLogin;
+    private Button _btnRegist;
     private Text _message;
+
+    public GameObject _login;
+    public GameObject _regist;
 
     private void Awake()
     {
         _inputAccount = transform.Find("InputAccount").GetComponent<InputField>();
         _inputPassword= transform.Find("InputPassword").GetComponent<InputField>();
         _btnLogin= transform.Find("BtnLogin").GetComponent<Button>();
+        _btnRegist = transform.Find("Regist").GetComponent<Button>();
         _message = transform.Find("Message").GetComponent<Text>();
         _btnLogin.onClick.AddListener(onBtnLoginClick);
+        _btnRegist.onClick.AddListener(onBtnRegistClick);
+    }
+
+    private void Start()
+    {
+        _inputAccount.text = PlayerPrefs.GetString("address");
+        _inputPassword.text = PlayerPrefs.GetString("password");
     }
 
     private void onBtnLoginClick()
     {
-        //连接服务器，等待返回数据
-        //暂时用假数据，直接进入选人界面
-        //SceneManager.LoadScene("SelectRole");
-        //ConnectMySql.instance.SelectWhere("player", new string[] { "*" }, new string[] { "login" },
-        //new string[] { "=" }, new string[] { "1" });
-        //Debug.Log(PlayerPrefs.GetString("name"));
-        //Debug.Log(PlayerPrefs.GetString("password"));
-        //Debug.Log(PlayerPrefs.GetString("login"));
         string address = _inputAccount.text;
         string password = _inputPassword.text;
         StartCoroutine(login(address, password));
+    }
+
+    private void onBtnRegistClick()
+    {
+        _regist.SetActive(true);
+        _login.SetActive(false);
     }
 
     IEnumerator login(string address,string password)
@@ -45,7 +55,6 @@ public class Login : MonoBehaviour
         add.AddField("password", password);
         UnityWebRequest webRequest = UnityWebRequest.Post(url, add);
         yield return webRequest.SendWebRequest();
-        //异常处理，很多博文用了error!=null这是错误的，请看下文其他属性部分
         if (webRequest.isHttpError || webRequest.isNetworkError)
             Debug.Log(webRequest.error);
         else
@@ -62,15 +71,8 @@ public class Login : MonoBehaviour
                 PlayerData.instance.experience = int.Parse(get[5]);
                 PlayerData.instance.hunger = int.Parse(get[6]);
                 PlayerData.instance.level = get[7];
-
-                //PlayerPrefs.SetString("name", address);
-                //PlayerPrefs.SetString("id", get[1]);
-                //PlayerPrefs.SetString("career", get[2]);
-                //PlayerPrefs.SetString("home", get[3]);
-                //PlayerPrefs.SetString("money", get[4]);
-                //PlayerPrefs.SetString("experience", get[5]);
-                //PlayerPrefs.SetString("hunger", get[6]);
-                //PlayerPrefs.SetString("level", get[7]);
+                PlayerPrefs.SetString("address", address);
+                PlayerPrefs.SetString("password", password);
                 SceneManager.LoadScene("SimpleTown_DemoScene");
             }
             _message.text = get[0];          
