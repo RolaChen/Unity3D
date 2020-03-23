@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\UI\Setup\Exit.cs" />
     <Compile Include="Assets\Scripts\UI\Setup\Login.cs" />
+    <Compile Include="Assets\Scripts\UI\Setup\Regist.cs" />
     <Compile Include="Assets\Scripts\UI\Setup\SelectRole.cs" />
     <Compile Include="Assets\Scripts\UserData.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
