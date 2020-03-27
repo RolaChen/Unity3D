@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 
 public class Login : MonoBehaviour
 {
-    private string url = "http://106.14.161.155/QianZhi/login.php";
+    private string url = "http://106.14.161.155/QianZhi/login_new.php";
     private InputField _inputAccount;
     private InputField _inputPassword;
     private Button _btnLogin;
@@ -65,15 +65,18 @@ public class Login : MonoBehaviour
             {
                 PlayerData.instance.name = address;
                 PlayerData.instance.id = get[1];
-                PlayerData.instance.career = get[2];
-                PlayerData.instance.home = get[3];
-                PlayerData.instance.money = int.Parse(get[4]);
-                PlayerData.instance.experience = int.Parse(get[5]);
-                PlayerData.instance.hunger = int.Parse(get[6]);
-                PlayerData.instance.level = get[7];
-                PlayerPrefs.SetString("address", address);
-                PlayerPrefs.SetString("password", password);
+                PlayerData.instance.gender = get[2];
+                PlayerData.instance.career = get[3];
+                PlayerData.instance.home = get[4];
+                //PlayerData.instance.money = int.Parse(get[4]);
+                //PlayerData.instance.experience = int.Parse(get[5]);
+                //PlayerData.instance.hunger = int.Parse(get[6]);
+                //PlayerData.instance.level = get[7];
+                //PlayerPrefs.SetString("address", address);
+                //PlayerPrefs.SetString("password", password);
                 SceneManager.LoadScene("SimpleTown_DemoScene");
+                Debug.Log(PlayerData.instance.gender);
+
             }
             _message.text = get[0];          
         }
