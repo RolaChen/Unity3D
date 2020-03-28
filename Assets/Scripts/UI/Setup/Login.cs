@@ -31,7 +31,7 @@ public class Login : MonoBehaviour
 
     private void Start()
     {
-        _inputAccount.text = PlayerPrefs.GetString("address");
+        _inputAccount.text = PlayerPrefs.GetString("name");
         _inputPassword.text = PlayerPrefs.GetString("password");
     }
 
@@ -50,6 +50,7 @@ public class Login : MonoBehaviour
 
     IEnumerator login(string address,string password)
     {
+        Debug.Log("here");
         WWWForm add = new WWWForm();
         add.AddField("name", address);
         add.AddField("password", password);
@@ -65,18 +66,17 @@ public class Login : MonoBehaviour
             {
                 PlayerData.instance.name = address;
                 PlayerData.instance.id = get[1];
-                PlayerData.instance.gender = get[2];
+                PlayerData.instance.gender = get[2] == "0" ? "男" : "女";
                 PlayerData.instance.career = get[3];
-                PlayerData.instance.home = get[4];
+                PlayerData.instance.family = get[4] == "5000" ? "大康" : "小康";
                 //PlayerData.instance.money = int.Parse(get[4]);
                 //PlayerData.instance.experience = int.Parse(get[5]);
                 //PlayerData.instance.hunger = int.Parse(get[6]);
                 //PlayerData.instance.level = get[7];
-                //PlayerPrefs.SetString("address", address);
-                //PlayerPrefs.SetString("password", password);
+                PlayerPrefs.SetString("name", address);
+                PlayerPrefs.SetString("password", password);
                 SceneManager.LoadScene("SimpleTown_DemoScene");
                 Debug.Log(PlayerData.instance.gender);
-
             }
             _message.text = get[0];          
         }
