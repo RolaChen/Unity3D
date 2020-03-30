@@ -19,7 +19,11 @@ public class Exit : MonoBehaviour
 
     private void exit()
     {
-        StartCoroutine(live());
+        if (PlayerData.instance.id != null)
+            StartCoroutine(live());
+        else
+            Debug.Log("no need");
+        
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else

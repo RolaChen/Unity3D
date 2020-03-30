@@ -11,8 +11,12 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
+        Debug.Log("target "+target.rotation);
+        Debug.Log("camera "+transform.rotation);
+        transform.rotation=Quaternion.Euler(target.rotation.x, target.rotation.y, transform.rotation.x);
+        Debug.Log("camera2 " + transform.rotation);
         transform.position = target.position - offset * currentZoom;
         transform.LookAt(target.position + Vector3.up * pitch);
-        //transform.rotation.Set(transform.rotation.x, target.rotation.y, transform.rotation.x,0);
+        //transform.rotation= target.rotation;
     }
 }

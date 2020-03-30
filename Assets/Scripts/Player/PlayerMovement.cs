@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = transform.Find("doctor").GetComponent<Animator>();
+        Debug.Log(PlayerData.instance.E_career);
+        animator = transform.Find(PlayerData.instance.E_career+"(Clone)").GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -23,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(Mathf.Abs(agent.remainingDistance) < 0.001f)
+        if(Mathf.Abs(agent.remainingDistance) < 0.01f)
             animator.SetBool("Iswalking", false);
         else
             animator.SetBool("Iswalking", true);

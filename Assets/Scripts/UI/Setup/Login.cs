@@ -69,13 +69,28 @@ public class Login : MonoBehaviour
                 PlayerData.instance.gender = get[2] == "0" ? "男" : "女";
                 PlayerData.instance.career = get[3];
                 PlayerData.instance.family = get[4] == "5000" ? "大康" : "小康";
+                switch (get[3])
+                {
+                    case "医生":
+                        PlayerData.instance.E_career = "doctor";
+                        PlayerData.instance.address = "Prefabs/UI/Characters/doctor";
+                        break;
+                    case "老师":
+                        PlayerData.instance.E_career = "teacher";
+                        PlayerData.instance.address = "Prefabs/UI/Characters/teacher";
+                        break;
+                    case "警察":
+                        PlayerData.instance.E_career = "police";
+                        PlayerData.instance.address = "Prefabs/UI/Characters/police";
+                        break;
+                }
                 //PlayerData.instance.money = int.Parse(get[4]);
                 //PlayerData.instance.experience = int.Parse(get[5]);
                 //PlayerData.instance.hunger = int.Parse(get[6]);
                 //PlayerData.instance.level = get[7];
                 PlayerPrefs.SetString("name", address);
                 PlayerPrefs.SetString("password", password);
-                SceneManager.LoadScene("SimpleTown_DemoScene");
+                SceneManager.LoadScene("LoginScene");
                 Debug.Log(PlayerData.instance.gender);
             }
             _message.text = get[0];          

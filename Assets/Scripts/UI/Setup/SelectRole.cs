@@ -39,6 +39,7 @@ public class SelectRole : MonoBehaviour
         {
             GameObject temp = GameObject.Instantiate(characterPrefebs[i],
                 player.transform.position, player.transform.rotation) as GameObject;
+            temp.transform.parent = transform;
             temp.SetActive(false);
             characters.Add(characterPrefebs[i].name, temp);
         }
@@ -106,6 +107,21 @@ public class SelectRole : MonoBehaviour
         PlayerData.instance.gender = _gender;
         PlayerData.instance.career = _career;
         PlayerData.instance.family = family;
+        switch(_career)
+        {
+            case "医生":
+                PlayerData.instance.E_career = "doctor";
+                PlayerData.instance.address = "Prefabs/UI/Characters/doctor";
+                break;
+            case "老师":
+                PlayerData.instance.E_career = "teacher";
+                PlayerData.instance.address = "Prefabs/UI/Characters/teacher";
+                break;
+            case "警察":
+                PlayerData.instance.E_career = "police";
+                PlayerData.instance.address = "Prefabs/UI/Characters/police";
+                break;
+        }
         StartCoroutine(regist());
     }
 
@@ -126,7 +142,7 @@ public class SelectRole : MonoBehaviour
             string information = webRequest.downloadHandler.text.ToString();
             if (information == "succeed")
             {
-                SceneManager.LoadScene("SimpleTown_DemoScene");
+                SceneManager.LoadScene("LoginScene");
             }
         }
     }

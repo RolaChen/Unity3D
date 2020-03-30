@@ -7,9 +7,13 @@ public class PlayerController : MonoBehaviour
 {
     Camera cam;
     Touch touch;
+    GameObject player;
     PlayerMovement movement;
     void Start()
     {
+        player = (GameObject)Resources.Load(PlayerData.instance.address);
+        player = Instantiate(player, transform.position, transform.rotation);
+        player.transform.parent = transform;
         cam = Camera.main;
         movement = GetComponent<PlayerMovement>();
     }
