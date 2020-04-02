@@ -8,15 +8,37 @@ public class CameraController : MonoBehaviour
     public Vector3 offset = new Vector3(0f, -0.29f, -0.55f);
     public float currentZoom = 10f;
     public float pitch = 2f;//玩家的身高
+    Touch touch;
+    Vector2 start, end;
+    float yaw = 0;
 
-    private void LateUpdate()
+    void Update()
     {
-        Debug.Log("target "+target.rotation);
-        Debug.Log("camera "+transform.rotation);
-        transform.rotation=Quaternion.Euler(target.rotation.x, target.rotation.y, transform.rotation.x);
-        Debug.Log("camera2 " + transform.rotation);
+        if (Input.touchCount > 0)
+        {
+            touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                start = touch.position;
+            }
+
+            else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Ended)
+            {
+                end = touch.position;
+                yaw -= (start.x - end.x)/10*Time.deltaTime;               
+            }
+        }
+        else
+            yaw -= 0;
+    }
+
+
+    void LateUpdate()
+    {
         transform.position = target.position - offset * currentZoom;
         transform.LookAt(target.position + Vector3.up * pitch);
-        //transform.rotation= target.rotation;
+        transform.RotateAround(target.position, Vector3.up, yaw);
     }
+
+
 }

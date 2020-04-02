@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     Touch touch;
     GameObject player;
     PlayerMovement movement;
+    Vector2 start,end;
+    float yaw = 0;
+
+
     void Start()
     {
         player = (GameObject)Resources.Load(PlayerData.instance.address);
@@ -24,14 +28,24 @@ public class PlayerController : MonoBehaviour
         if(Input.touchCount>0)
         {
             touch = Input.GetTouch(0);
-            if(touch.phase==TouchPhase.Began)
+            if (touch.phase == TouchPhase.Began)
             {
-               Ray ray = cam.ScreenPointToRay(touch.position);
-               RaycastHit hit;
-               if(Physics.Raycast(ray, out hit))
-               {
-                  movement.MoveToPoint(hit.point);
-               }
+                start = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Ended)
+            {
+                Debug.Log("here");
+                end = touch.position;
+                yaw = start.x - end.x;
+                if (Mathf.Abs(yaw) <0.1f)
+                {
+                    Ray ray = cam.ScreenPointToRay(touch.position);
+                    RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        movement.MoveToPoint(hit.point);
+                    }
+                }
             }
         }
         
