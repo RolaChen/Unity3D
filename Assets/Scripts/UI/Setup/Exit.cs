@@ -13,7 +13,7 @@ public class Exit : MonoBehaviour
 
     void Start()
     {
-        _exit = transform.Find("Exit").GetComponent<Button>();
+        _exit = GetComponent<Button>();
         _exit.onClick.AddListener(exit);
     }
 
