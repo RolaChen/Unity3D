@@ -13,6 +13,7 @@ public class PlayerData:Singleton<PlayerData>
     public string gender;
     public string family;
     public int experience;
+    public int reputation;
     public int hunger;
     public int money;
     public string level;
