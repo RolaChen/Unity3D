@@ -69,6 +69,11 @@ public class Login : MonoBehaviour
                 PlayerData.instance.gender = get[2] == "0" ? "男" : "女";
                 PlayerData.instance.career = get[3];
                 PlayerData.instance.family = get[4] == "5000" ? "大康" : "小康";
+                PlayerData.instance.money = int.Parse(get[5]);
+                PlayerData.instance.experience = int.Parse(get[6]);
+                PlayerData.instance.reputation = int.Parse(get[7]);
+                PlayerData.instance.level = get[8];
+                PlayerData.instance.hunger = int.Parse(get[9]);
                 switch (get[3])
                 {
                     case "医生":
@@ -84,10 +89,6 @@ public class Login : MonoBehaviour
                         PlayerData.instance.address = "Prefabs/UI/Characters/police";
                         break;
                 }
-                //PlayerData.instance.money = int.Parse(get[4]);
-                //PlayerData.instance.experience = int.Parse(get[5]);
-                //PlayerData.instance.hunger = int.Parse(get[6]);
-                //PlayerData.instance.level = get[7];
                 PlayerPrefs.SetString("name", address);
                 PlayerPrefs.SetString("password", password);
                 SceneManager.LoadScene("LoginScene");

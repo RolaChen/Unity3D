@@ -123,6 +123,11 @@ public class SelectRole : MonoBehaviour
                 break;
         }
         StartCoroutine(regist());
+        PlayerData.instance.money = PlayerData.instance.family == "大康" ? 5000 : 2000;
+        PlayerData.instance.experience = 0;
+        PlayerData.instance.hunger = 100;
+        PlayerData.instance.reputation = 0;
+        PlayerData.instance.level = "实习生";
     }
 
     IEnumerator regist()
