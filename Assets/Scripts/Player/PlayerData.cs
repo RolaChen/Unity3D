@@ -12,6 +12,7 @@ public class PlayerData:Singleton<PlayerData>
     public string E_career;
     public string gender;
     public string family;
+    public string location;
     public int experience;
     public int reputation;
     public int hunger;

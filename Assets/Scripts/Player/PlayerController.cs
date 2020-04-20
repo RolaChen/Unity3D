@@ -34,15 +34,18 @@ public class PlayerController : MonoBehaviour
             }
             else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Ended)
             {
-                Debug.Log("here");
+                //Debug.Log("here");
                 end = touch.position;
                 yaw = start.x - end.x;
+                
                 if (Mathf.Abs(yaw) <0.1f)
                 {
                     Ray ray = cam.ScreenPointToRay(touch.position);
                     RaycastHit hit;
+                    Debug.Log("here");
                     if (Physics.Raycast(ray, out hit))
                     {
+                        Debug.Log("we hit" + hit.collider.name);
                         movement.MoveToPoint(hit.point);
                     }
                 }

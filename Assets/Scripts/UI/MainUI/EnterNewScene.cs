@@ -14,6 +14,8 @@ public class EnterNewScene : MonoBehaviour
         if(other.transform==player)
         {
             m_IsPlayerInRange = true;
+            PlayerData.instance.location = transform.name;
+            Debug.Log(PlayerData.instance.location);
         }
     }
 
