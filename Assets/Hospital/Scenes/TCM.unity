@@ -97,7 +97,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.2
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -105,13 +105,13 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.06666667
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: f6c059efb055b2b4d838b994373e2312, type: 2}
 --- !u!1001 &1724370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1812,8 +1812,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 4e11fe422326e1e4fa6cc1dcd18b9c8a, type: 3}
 --- !u!4 &415772214 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 432814, guid: 4e11fe422326e1e4fa6cc1dcd18b9c8a,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 415772213}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &415772215 stripped
@@ -7988,8 +7987,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 39b287d34a3504a4fa982f569f90ecfd, type: 3}
 --- !u!4 &2125124793 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 440010, guid: 39b287d34a3504a4fa982f569f90ecfd,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 2125124792}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2125124794 stripped
