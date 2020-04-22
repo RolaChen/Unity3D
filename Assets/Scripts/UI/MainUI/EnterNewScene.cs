@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnterNewScene : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class EnterNewScene : MonoBehaviour
         if(other.transform==player)
         {
             m_IsPlayerInRange = false;
+            if(image!=null)
+                image.SetActive(false);
         }
     }
 
@@ -31,8 +34,9 @@ public class EnterNewScene : MonoBehaviour
     void Update()
     {
         if (m_IsPlayerInRange)
-            image.SetActive(true);
-        else
-            image.SetActive(false);
+            if (image != null)
+                image.SetActive(true);
+            else
+                SceneManager.LoadScene(PlayerData.instance.location);
     }
 }
