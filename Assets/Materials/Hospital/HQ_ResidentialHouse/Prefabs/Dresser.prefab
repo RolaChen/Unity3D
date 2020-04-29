@@ -105,7 +105,6 @@ GameObject:
   - component: {fileID: 496384}
   - component: {fileID: 3350980}
   - component: {fileID: 2384146}
-  - component: {fileID: 11108550}
   - component: {fileID: 6599108}
   m_Layer: 0
   m_Name: DrawerA
@@ -173,22 +172,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!111 &11108550
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123534}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 6dac06d8bf7f7c444af6f7239be9b8aa, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 6dac06d8bf7f7c444af6f7239be9b8aa, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!65 &6599108
 BoxCollider:
   m_ObjectHideFlags: 0
