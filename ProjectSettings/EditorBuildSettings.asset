@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Iron.unity
     guid: 0fadb328f022f7c44bbfa0b7f0f9ca93
   - enabled: 1
+    path: Assets/Scenes/Sliver.unity
+    guid: 86c5e461cf745d34db74bd7bf3bf7b87
+  - enabled: 1
     path: Assets/Scenes/Copper.unity
     guid: 0b454a02c033caf4ba437fc2a526be4e
   - enabled: 1

@@ -404,6 +404,11 @@ PrefabInstance:
       propertyPath: image
       value: 
       objectReference: {fileID: 1457814298}
+    - target: {fileID: 7663695003226980189, guid: 939c34303a916ee4a8bc9803ea0a7cf5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7663695003617757044, guid: 939c34303a916ee4a8bc9803ea0a7cf5,
         type: 3}
       propertyPath: m_LocalPosition.x
