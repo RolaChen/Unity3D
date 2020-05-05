@@ -12,7 +12,7 @@ public class MainUI : MonoBehaviour
     Text _career;
     Text _hunger;
     Text _name;
-    Text _reputation;
+    Text _emotion;
     Button _head;
     string gender;
 
@@ -34,7 +34,7 @@ public class MainUI : MonoBehaviour
         _money = transform.Find("money").GetComponent<Text>();
         _level = transform.Find("level").GetComponent<Text>();
         _hunger = transform.Find("hunger").GetComponent<Text>();
-        _reputation = transform.Find("reputation").GetComponent<Text>();
+        _emotion = transform.Find("emotion").GetComponent<Text>();
         _head = transform.Find("head").GetComponent<Button>();
         _head.image.sprite = Resources.Load(gender, typeof(Sprite)) as Sprite;
         _name.text = PlayerData.instance.name;
@@ -42,7 +42,7 @@ public class MainUI : MonoBehaviour
         _family.text = PlayerData.instance.family;
         _experience.text = PlayerData.instance.experience.ToString();
         _hunger.text = PlayerData.instance.hunger.ToString();
-        _reputation.text = PlayerData.instance.reputation.ToString();
+        _emotion.text = PlayerData.instance.emotion.ToString();
         _money.text = PlayerData.instance.money.ToString();
         _level.text = PlayerData.instance.level;
     }

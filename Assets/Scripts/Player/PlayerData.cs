@@ -14,7 +14,7 @@ public class PlayerData:Singleton<PlayerData>
     public string family;
     public string location;
     public int experience;
-    public int reputation;
+    public int emotion;
     public int hunger;
     public int money;
     public string level;

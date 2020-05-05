@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 5876368790375329896}
   - component: {fileID: 5876368790375329899}
   m_Layer: 5
-  m_Name: reputation
+  m_Name: emotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -720,7 +720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 343, y: -52}
+  m_AnchoredPosition: {x: -92, y: -140}
   m_SizeDelta: {x: 250.8, y: 69.400024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5876368790375329896
@@ -762,9 +762,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'reputation
-
-'
+  m_Text: emotion
 --- !u!1 &5876368790920392427
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -92, y: -140}
+  m_AnchoredPosition: {x: 344, y: -52}
   m_SizeDelta: {x: 250.8, y: 69.400024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5876368790920392422

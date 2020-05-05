@@ -126,7 +126,7 @@ public class SelectRole : MonoBehaviour
         PlayerData.instance.money = PlayerData.instance.family == "大康" ? 5000 : 2000;
         PlayerData.instance.experience = 0;
         PlayerData.instance.hunger = 100;
-        PlayerData.instance.reputation = 0;
+        PlayerData.instance.emotion = 100;
         PlayerData.instance.level = "实习生";
     }
 

@@ -71,7 +71,7 @@ public class Login : MonoBehaviour
                 PlayerData.instance.family = get[4] == "5000" ? "大康" : "小康";
                 PlayerData.instance.money = int.Parse(get[5]);
                 PlayerData.instance.experience = int.Parse(get[6]);
-                PlayerData.instance.reputation = int.Parse(get[7]);
+                PlayerData.instance.emotion = int.Parse(get[7]);
                 PlayerData.instance.level = get[8];
                 PlayerData.instance.hunger = int.Parse(get[9]);
                 switch (get[3])
