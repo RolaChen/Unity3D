@@ -15,6 +15,7 @@ public class MainUI : MonoBehaviour
     Text _emotion;
     Button _head;
     string gender;
+    public GameObject design;
 
     private void Awake()
     {
@@ -45,6 +46,13 @@ public class MainUI : MonoBehaviour
         _emotion.text = PlayerData.instance.emotion.ToString();
         _money.text = PlayerData.instance.money.ToString();
         _level.text = PlayerData.instance.level;
+        _head.onClick.AddListener(click_design);
+        
+    }
+
+    private void click_design()
+    {
+        design.SetActive(true);
     }
 
     // Update is called once per frame
