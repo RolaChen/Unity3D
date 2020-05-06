@@ -8,7 +8,9 @@ public class Design : MonoBehaviour
 {
 
     Button _commute;
+    Button _exit;
     public GameObject commute;
+    public GameObject design;
 
 
     // Start is called before the first frame update
@@ -16,6 +18,13 @@ public class Design : MonoBehaviour
     {
         _commute = transform.Find("commute_bt").GetComponent<Button>();
         _commute.onClick.AddListener(click_commute);
+        _exit = transform.Find("exit").GetComponent<Button>();
+        _exit.onClick.AddListener(click_exit);
+    }
+
+    private void click_exit()
+    {
+        design.SetActive(false);
     }
 
     private void click_commute()
