@@ -19,6 +19,7 @@ public class PlayerData:Singleton<PlayerData>
     public int money;
     public string level;
     public string address;
-    public int date;
+    public int month;
+    public int day;
     public string time;
 }

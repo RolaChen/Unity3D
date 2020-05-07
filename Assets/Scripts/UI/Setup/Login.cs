@@ -74,9 +74,10 @@ public class Login : MonoBehaviour
                 PlayerData.instance.emotion = int.Parse(get[7]);
                 PlayerData.instance.level = get[8];
                 PlayerData.instance.hunger = int.Parse(get[9]);
-                PlayerData.instance.date = int.Parse(get[10]);
-                PlayerData.instance.time = get[11];
-                Debug.Log(PlayerData.instance.date + PlayerData.instance.time);
+                PlayerData.instance.month = int.Parse(get[10]);
+                PlayerData.instance.day = int.Parse(get[11]);
+                PlayerData.instance.time = get[12];
+                Debug.Log(PlayerData.instance.month + PlayerData.instance.time);
                 switch (get[3])
                 {
                     case "医生":

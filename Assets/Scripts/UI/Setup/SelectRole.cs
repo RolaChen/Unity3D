@@ -128,7 +128,8 @@ public class SelectRole : MonoBehaviour
         PlayerData.instance.hunger = 100;
         PlayerData.instance.emotion = 100;
         PlayerData.instance.level = "实习生";
-        PlayerData.instance.date = 1;
+        PlayerData.instance.month = 1;
+        PlayerData.instance.day = 1;
         PlayerData.instance.time = "上午";
     }
 
