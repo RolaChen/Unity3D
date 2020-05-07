@@ -22,4 +22,5 @@ public class PlayerData:Singleton<PlayerData>
     public int month;
     public int day;
     public string time;
+    public string pre_Scene;
 }

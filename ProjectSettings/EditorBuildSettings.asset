@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PoliceOffice.unity
     guid: be2ecc8048984fb439b076a5eceb5c4a
   - enabled: 1
+    path: Assets/Scenes/Learning.unity
+    guid: 93b45631be825c14f9e8c59f873fa531
+  - enabled: 1
     path: Assets/Scenes/Hospital/Dentist.unity
     guid: b6cb0c6772829624dacd6470626372db
   - enabled: 1

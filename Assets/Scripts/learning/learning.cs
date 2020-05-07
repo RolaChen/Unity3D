@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class learning : MonoBehaviour
 {
     private string url = "http://106.14.161.155/QianZhi/learning.php";
-    string major;
     ArrayList _urls = new ArrayList();
     ArrayList _knowledge = new ArrayList();
     ArrayList _name = new ArrayList();
@@ -25,7 +24,6 @@ public class learning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        major = "中医";
         StartCoroutine(getLearning());
         next.onClick.AddListener(Next);
     }
@@ -48,9 +46,10 @@ public class learning : MonoBehaviour
 
     IEnumerator getLearning()
     {
+        Debug.Log(PlayerData.instance.pre_Scene);
         Debug.Log("learning");
         WWWForm add = new WWWForm();
-        add.AddField("major", major);
+        add.AddField("major", UserData.instance.map[PlayerData.instance.pre_Scene]);
         //add.AddField("level", PlayerData.instance.level);
         add.AddField("level", "实习生");
         UnityWebRequest webRequest = UnityWebRequest.Post(url, add);
