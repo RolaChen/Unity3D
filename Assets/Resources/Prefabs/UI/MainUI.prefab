@@ -326,7 +326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3527235559981992816
 RectTransform:
   m_ObjectHideFlags: 0
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 5846496699786132066}
   - component: {fileID: 669674114781622096}
   m_Layer: 5
-  m_Name: title (1)
+  m_Name: message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1817,7 +1817,7 @@ GameObject:
   - component: {fileID: 2389388970222227403}
   - component: {fileID: 5692065002720034603}
   - component: {fileID: 3045790185752603613}
-  - component: {fileID: 6832691369326330447}
+  - component: {fileID: 6145050984240111957}
   m_Layer: 5
   m_Name: timetable
   m_TagString: Untagged
@@ -1883,7 +1883,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &6832691369326330447
+--- !u!114 &6145050984240111957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1892,15 +1892,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4162145087186555600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1257b581f412ad646a4c37d00ea19d9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 279c1d6e087af804692f316bb7c9bab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hospital: {fileID: 0}
-  _school: {fileID: 0}
-  _police: {fileID: 0}
-  _iron: {fileID: 0}
-  _copper: {fileID: 0}
-  _sliver: {fileID: 0}
+  month: {fileID: 5693964173180436080}
+  day: {fileID: 2148222296270554922}
+  time: {fileID: 1069067963923650844}
 --- !u!1 &4263540966485474526
 GameObject:
   m_ObjectHideFlags: 0

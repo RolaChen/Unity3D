@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\UI\MainUI\Enter.cs" />
     <Compile Include="Assets\Scripts\UI\MainUI\EnterNewScene.cs" />
     <Compile Include="Assets\Scripts\UI\MainUI\MainUI.cs" />
+    <Compile Include="Assets\Scripts\UI\MainUI\Timetable.cs" />
     <Compile Include="Assets\Scripts\UI\Setup\Exit.cs" />
     <Compile Include="Assets\Scripts\UI\Setup\Login.cs" />
     <Compile Include="Assets\Scripts\UI\Setup\Regist.cs" />
