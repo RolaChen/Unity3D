@@ -32,6 +32,11 @@ public class learning : MonoBehaviour
     {
         if (index == _urls.Count)
         {
+            PlayerData.instance.experience = PlayerData.instance.experience + 50;
+            PlayerData.instance.emotion = PlayerData.instance.emotion - 30;
+            PlayerData.instance.hunger = PlayerData.instance.hunger - 30;
+            UserData.instance.datePass();
+            StartCoroutine(UserData.instance.update());
             finish.SetActive(true);
             learn.SetActive(false);
         }

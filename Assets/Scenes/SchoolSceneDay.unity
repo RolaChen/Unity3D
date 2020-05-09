@@ -11204,7 +11204,7 @@ PrefabInstance:
     - target: {fileID: 8366834730469394000, guid: cb03cc9973546c64888b568be73651d4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.41
+      value: -29.8
       objectReference: {fileID: 0}
     - target: {fileID: 8366834730469394000, guid: cb03cc9973546c64888b568be73651d4,
         type: 3}
@@ -11214,7 +11214,7 @@ PrefabInstance:
     - target: {fileID: 8366834730469394000, guid: cb03cc9973546c64888b568be73651d4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.9
+      value: 28.33
       objectReference: {fileID: 0}
     - target: {fileID: 8366834730469394000, guid: cb03cc9973546c64888b568be73651d4,
         type: 3}
@@ -11275,6 +11275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LoginScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8366834730469394002, guid: cb03cc9973546c64888b568be73651d4,
+        type: 3}
+      propertyPath: m_Radius
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8366834730469394003, guid: cb03cc9973546c64888b568be73651d4,
         type: 3}

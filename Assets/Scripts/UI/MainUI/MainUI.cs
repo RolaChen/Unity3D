@@ -58,6 +58,9 @@ public class MainUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        _experience.text = PlayerData.instance.experience.ToString();
+        _hunger.text = PlayerData.instance.hunger.ToString();
+        _emotion.text = PlayerData.instance.emotion.ToString();
+        _money.text = PlayerData.instance.money.ToString();
     }
 }

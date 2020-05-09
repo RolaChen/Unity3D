@@ -410,6 +410,8 @@ MonoBehaviour:
   _iron: {fileID: 2245243556482021574}
   _copper: {fileID: 1295789226475708629}
   _sliver: {fileID: 3784098236182224728}
+  _golden: {fileID: 1311677432091409}
+  _shop: {fileID: 1860055671779154563}
 --- !u!1 &908892606030043001
 GameObject:
   m_ObjectHideFlags: 0

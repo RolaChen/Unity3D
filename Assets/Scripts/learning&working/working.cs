@@ -22,6 +22,7 @@ public class working : MonoBehaviour
     public GameObject work;
     public GameObject finish;
     public Text score;
+    public Text report;
 
     ArrayList a1 = new ArrayList();
     ArrayList a2 = new ArrayList();
@@ -159,7 +160,15 @@ public class working : MonoBehaviour
     {
         if (index == q.Count)
         {
+            int i = (index - right) * 20 - 5;
+            int j = right * 20;
             score.text = "一共" +index + "道题，共答对" +right+ "道" ;
+            report.text = "本次扣除体力50点，愉悦值"+i.ToString()+"点\n提升"+j.ToString()+"点经验值";
+            PlayerData.instance.experience = PlayerData.instance.experience + j;
+            PlayerData.instance.emotion = PlayerData.instance.emotion - i;
+            PlayerData.instance.hunger = PlayerData.instance.hunger - 50;
+            UserData.instance.datePass();
+            StartCoroutine(UserData.instance.update());
             finish.SetActive(true);
             work.SetActive(false);
         }

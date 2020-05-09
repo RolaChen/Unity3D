@@ -7,14 +7,15 @@ using System;
 
 public class commute : MonoBehaviour
 {
+    
     public Button _hospital;
     public Button _school;
     public Button _police;
     public Button _iron;
     public Button _copper;
     public Button _sliver;
-    Button _golden;
-    Button _shop;
+    public Button _golden;
+    public Button _shop;
     Button _home;
     // Start is called before the first frame update
     void Start()
@@ -26,40 +27,62 @@ public class commute : MonoBehaviour
         _copper.onClick.AddListener(click_copper);
         _sliver.onClick.AddListener(click_sliver);
         _golden.onClick.AddListener(click_golden);
+        _shop.onClick.AddListener(click_shop);
+    }
+
+    private void click_shop()
+    {
+        PlayerData.instance.money = PlayerData.instance.money - 2;
+        StartCoroutine(UserData.instance.update());
+        SceneManager.LoadScene("Shop");
     }
 
     private void click_golden()
     {
+        PlayerData.instance.money = PlayerData.instance.money - 2;
+        StartCoroutine(UserData.instance.update());
         SceneManager.LoadScene("Sliver");
     }
 
     private void click_sliver()
     {
+        PlayerData.instance.money = PlayerData.instance.money - 2;
+        StartCoroutine(UserData.instance.update());
         SceneManager.LoadScene("Yin");
     }
 
     private void click_copper()
     {
+        PlayerData.instance.money = PlayerData.instance.money - 2;
+        StartCoroutine(UserData.instance.update());
         SceneManager.LoadScene("Copper");
     }
 
     private void click_iron()
     {
+        PlayerData.instance.money = PlayerData.instance.money - 2;
+        StartCoroutine(UserData.instance.update());
         SceneManager.LoadScene("Iron");
     }
 
     private void click_police()
     {
+        PlayerData.instance.money = PlayerData.instance.money - 2;
+        StartCoroutine(UserData.instance.update());
         SceneManager.LoadScene("PoliceOffice");
     }
 
     private void click_school()
     {
+        PlayerData.instance.money = PlayerData.instance.money - 2;
+        StartCoroutine(UserData.instance.update());
         SceneManager.LoadScene("SchoolSceneDay");
     }
 
     private void click_hospital()
     {
+        PlayerData.instance.money = PlayerData.instance.money - 2;
+        StartCoroutine(UserData.instance.update());
         SceneManager.LoadScene("Hospital");
     }
 
