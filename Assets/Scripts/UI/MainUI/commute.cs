@@ -25,11 +25,17 @@ public class commute : MonoBehaviour
         _iron.onClick.AddListener(click_iron);
         _copper.onClick.AddListener(click_copper);
         _sliver.onClick.AddListener(click_sliver);
+        _golden.onClick.AddListener(click_golden);
+    }
+
+    private void click_golden()
+    {
+        SceneManager.LoadScene("Sliver");
     }
 
     private void click_sliver()
     {
-        SceneManager.LoadScene("Sliver");
+        SceneManager.LoadScene("Yin");
     }
 
     private void click_copper()

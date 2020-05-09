@@ -10,7 +10,7 @@ public class StartGame : MonoBehaviour
         UserData.instance.map.Add("TCM", "中医");
         UserData.instance.map.Add("Dentist", "牙医");
         UserData.instance.map.Add("Psychiatrist", "精神科");
-        Debug.Log(UserData.instance.map["TCM"]);
+        Debug.Log(UserData.instance.map["Dentist"]);
     }
 
 }

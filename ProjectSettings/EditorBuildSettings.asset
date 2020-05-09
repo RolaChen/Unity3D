@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hospital/TCM.unity
     guid: 362da586e9469654daedd1d383245ec9
+  - enabled: 1
+    path: Assets/Scenes/Yin.unity
+    guid: 55a6a02c382467b4191920fb699334f4
   m_configObjects: {}
