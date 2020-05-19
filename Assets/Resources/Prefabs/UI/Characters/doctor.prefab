@@ -754,6 +754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 447968}
   - component: {fileID: 9525212}
+  - component: {fileID: 5149382835080145333}
   m_Layer: 0
   m_Name: doctor
   m_TagString: Untagged
@@ -845,6 +846,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5149382835080145333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89e1bb6b0c49cd4888198c5f8f87e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
 --- !u!1 &111288
 GameObject:
   m_ObjectHideFlags: 0

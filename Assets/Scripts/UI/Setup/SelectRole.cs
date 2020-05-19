@@ -43,7 +43,7 @@ public class SelectRole : MonoBehaviour
             temp.SetActive(false);
             characters.Add(characterPrefebs[i].name, temp);
         }
-        characters["doctor"].SetActive(true);
+        characters["doctor1"].SetActive(true);
 
         //family initialize
 
@@ -69,15 +69,15 @@ public class SelectRole : MonoBehaviour
                     break;
                 case "doctor":
                     _career = "医生";
-                    characters["doctor"].SetActive(true);
+                    characters["doctor1"].SetActive(true);
                     break;
                 case "teacher":
                     _career = "老师";
-                    characters["teacher"].SetActive(true);
+                    characters["teacher1"].SetActive(true);
                     break;
                 case "police":
                     _career = "警察";
-                    characters["police"].SetActive(true);
+                    characters["police1"].SetActive(true);
                     break;
             }
         }
@@ -90,13 +90,13 @@ public class SelectRole : MonoBehaviour
                 case "female":
                     break;
                 case "doctor":
-                    characters["doctor"].SetActive(false);
+                    characters["doctor1"].SetActive(false);
                     break;
                 case "teacher":
-                    characters["teacher"].SetActive(false);
+                    characters["teacher1"].SetActive(false);
                     break;
                 case "police":
-                    characters["police"].SetActive(false);
+                    characters["police1"].SetActive(false);
                     break;
             }
         }

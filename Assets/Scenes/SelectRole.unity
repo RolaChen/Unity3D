@@ -2642,6 +2642,36 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -17.699707
       objectReference: {fileID: 0}
+    - target: {fileID: 5837426908281226316, guid: ae95e5f9308a0c64383fef1373d8a9e2,
+        type: 3}
+      propertyPath: toggles.Array.data[0]
+      value: 
+      objectReference: {fileID: 518840961}
+    - target: {fileID: 5837426908281226316, guid: ae95e5f9308a0c64383fef1373d8a9e2,
+        type: 3}
+      propertyPath: toggles.Array.data[1]
+      value: 
+      objectReference: {fileID: 1668239306}
+    - target: {fileID: 5837426908281226316, guid: ae95e5f9308a0c64383fef1373d8a9e2,
+        type: 3}
+      propertyPath: toggles.Array.data[2]
+      value: 
+      objectReference: {fileID: 926897558}
+    - target: {fileID: 5837426908281226316, guid: ae95e5f9308a0c64383fef1373d8a9e2,
+        type: 3}
+      propertyPath: toggles.Array.data[3]
+      value: 
+      objectReference: {fileID: 470768338}
+    - target: {fileID: 5837426908281226316, guid: ae95e5f9308a0c64383fef1373d8a9e2,
+        type: 3}
+      propertyPath: toggles.Array.data[4]
+      value: 
+      objectReference: {fileID: 1402799985}
+    - target: {fileID: 5837426908281226316, guid: ae95e5f9308a0c64383fef1373d8a9e2,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1233673130}
     - target: {fileID: 6403634377994779430, guid: ae95e5f9308a0c64383fef1373d8a9e2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2799,32 +2829,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8423144142786062043}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8423144142786062047 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3780631392962748973, guid: ae95e5f9308a0c64383fef1373d8a9e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 8423144142786062043}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8423144142786062048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8423144142786062047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9e06d09c24db094d947ddec8e458435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggles:
-  - {fileID: 518840961}
-  - {fileID: 1668239306}
-  - {fileID: 926897558}
-  - {fileID: 470768338}
-  - {fileID: 1402799985}
-  characterPrefebs:
-  - {fileID: 110900, guid: ba339b8abf10f314e9abfaa02daf88e3, type: 3}
-  - {fileID: 102266, guid: 460f9e46e9a3c094a874c7b9670dc789, type: 3}
-  - {fileID: 107428, guid: ca666658ba812434682fa3a7c12cb826, type: 3}
-  player: {fileID: 1233673130}

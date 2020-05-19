@@ -10,15 +10,26 @@ public class Enter : MonoBehaviour
     private Button _enter;
     private Text _text;
     private int choice;
+    private Scene scene;
     // Start is called before the first frame update
     void Start()
     {
-        Scene scene = SceneManager.GetActiveScene();
+        scene = SceneManager.GetActiveScene();
         PlayerData.instance.pre_Scene = scene.name; //记录一下当前场景
         _text = transform.Find("Text").GetComponent<Text>();
         _enter = transform.Find("Button").GetComponent<Button>();
         _enter.onClick.AddListener(OnEnter);
-        switch(PlayerData.instance.location)
+    }
+
+    private void OnEnter()
+    {
+        SceneManager.LoadScene(PlayerData.instance.location);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        switch (PlayerData.instance.location)
         {
             case "learning":
                 choice = 1;
@@ -27,17 +38,7 @@ public class Enter : MonoBehaviour
                 choice = 2;
                 break;
         }
-    }
-
-    private void OnEnter()
-    {       
-        SceneManager.LoadScene(PlayerData.instance.location);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(choice ==1)
+        if (choice ==1)
             _text.text = "你是否执行" + UserData.instance.map[PlayerData.instance.pre_Scene] + "的任务";
         else
             _text.text = "你是否要进入" + UserData.instance.map[PlayerData.instance.location];

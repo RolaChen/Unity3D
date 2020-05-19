@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMovement))]
+//[RequireComponent(typeof(PlayerMovement))]
 public class PlayerController : MonoBehaviour
 {
     Camera cam;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         player.transform.parent = transform;
         player.name = PlayerData.instance.E_career;
         cam = Camera.main;
-        movement = GetComponent<PlayerMovement>();
+        movement = transform.Find(PlayerData.instance.E_career).GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame

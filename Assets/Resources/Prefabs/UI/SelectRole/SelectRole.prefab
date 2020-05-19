@@ -96,6 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3036662185623597395}
+  - component: {fileID: 5837426908281226316}
   m_Layer: 5
   m_Name: SelectRole
   m_TagString: Untagged
@@ -125,6 +126,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.00012207, y: 0.00012207}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5837426908281226316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3780631392962748973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9e06d09c24db094d947ddec8e458435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  characterPrefebs:
+  - {fileID: 7514627548658406391, guid: c229d1da09104d24c89d228b1a42a58e, type: 3}
+  - {fileID: 357675699070239268, guid: 54bca9a8beb4c8742a8065cdac00424e, type: 3}
+  - {fileID: 2896113223633067532, guid: 16cdeefd1e15fb342b77cd7f18a9d0f4, type: 3}
+  player: {fileID: 0}
 --- !u!1 &5526542626707019209
 GameObject:
   m_ObjectHideFlags: 0
