@@ -12,12 +12,12 @@ public class PlayerController : MonoBehaviour
     Vector2 start,end;
     float yaw = 0;
 
-
     void Start()
     {
         player = (GameObject)Resources.Load(PlayerData.instance.address);
         player = Instantiate(player, transform.position, transform.rotation);
         player.transform.parent = transform;
+        player.name = PlayerData.instance.E_career;
         cam = Camera.main;
         movement = GetComponent<PlayerMovement>();
     }
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("here");
                     if (Physics.Raycast(ray, out hit))
                     {
-                        Debug.Log("we hit" + hit.collider.name);
+                        Debug.Log("before we hit" + hit.point);
                         movement.MoveToPoint(hit.point);
                     }
                 }
