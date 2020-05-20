@@ -33,6 +33,7 @@ public class working : MonoBehaviour
 
     int index = 1;
     int right = 0;
+    private int[] qqq = new int[3];
 
     void Start()
     {
@@ -210,9 +211,26 @@ public class working : MonoBehaviour
             string information = webRequest.downloadHandler.text.ToString();
             Debug.Log(information);
             string[] get = information.Split('@');
-            for (int i = 0; i < get.Length - 1; i++)
+            //随机找3题
+            System.Random rd = new System.Random();
+            int tempp;
+            qqq[0] = rd.Next(0, get.Length - 1);
+            tempp = rd.Next(0, get.Length - 1);
+            while(tempp==qqq[0])
             {
-                string[] temp = get[i].Split('*');
+                tempp = rd.Next(0, get.Length - 1);
+            }
+            qqq[1] = tempp;
+            tempp = rd.Next(0, get.Length - 1);
+            while(tempp == qqq[0]|| tempp == qqq[1])
+            {
+                tempp = rd.Next(0, get.Length - 1);
+            }
+            qqq[2] = tempp;
+
+            for (int i = 0; i < 3; i++)
+            {
+                string[] temp = get[qqq[i]].Split('*');
                 q.Add(temp[0]);
                 a1.Add(temp[1]);
                 a2.Add(temp[2]);

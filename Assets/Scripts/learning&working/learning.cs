@@ -21,6 +21,7 @@ public class learning : MonoBehaviour
 
     int index = 1;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,8 +56,10 @@ public class learning : MonoBehaviour
         Debug.Log("learning");
         WWWForm add = new WWWForm();
         add.AddField("major", UserData.instance.map[PlayerData.instance.pre_Scene]);
-        //add.AddField("level", PlayerData.instance.level);
-        add.AddField("level", "实习生");
+        add.AddField("level", PlayerData.instance.level);
+        int learnTime = PlayerPrefs.GetInt(UserData.instance.map[PlayerData.instance.pre_Scene]);
+        add.AddField("index", learnTime % 2);
+        PlayerPrefs.SetInt(UserData.instance.map[PlayerData.instance.pre_Scene], learnTime + 1);        
         UnityWebRequest webRequest = UnityWebRequest.Post(url, add);
         yield return webRequest.SendWebRequest();
         if (webRequest.isHttpError || webRequest.isNetworkError)
@@ -64,6 +67,7 @@ public class learning : MonoBehaviour
         else
         {
             string information = webRequest.downloadHandler.text.ToString();
+            Debug.Log("start here");
             Debug.Log(information);
             string[] get = information.Split('@'); 
             for (int i = 0; i < get.Length-1; i++)

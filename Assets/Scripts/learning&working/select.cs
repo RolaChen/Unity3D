@@ -10,6 +10,7 @@ public class select : MonoBehaviour
     public GameObject learning;
     public GameObject working;
     public GameObject myself;
+    public Text text;
     Button _learn;
     Button _work;
     Button _return;
@@ -31,8 +32,15 @@ public class select : MonoBehaviour
 
     private void click_work()
     {
-        working.SetActive(true);
-        myself.SetActive(false);
+        if(PlayerPrefs.GetInt(UserData.instance.map[PlayerData.instance.pre_Scene])<2)
+        {
+            text.text = "该科室学习不足两次，不能开始做任务";
+        }
+        else
+        {
+            working.SetActive(true);
+            myself.SetActive(false);
+        }
     }
 
     private void click_learn()
