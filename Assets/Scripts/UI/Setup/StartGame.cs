@@ -20,7 +20,24 @@ public class StartGame : MonoBehaviour
         UserData.instance.map.Add("Shop", "商城");
         UserData.instance.map.Add("Sliver", "千职别墅");
         UserData.instance.map.Add("Yin", "高档公寓");
-        Debug.Log(UserData.instance.map["Dentist"]);
+
+        UserData.instance.location.Add("Iron", new Vector3(-8.8f, 0, 92f));
+        UserData.instance.location.Add("Copper", new Vector3(85.6f, 0, 102.2f));
+        UserData.instance.location.Add("Yin", new Vector3(183.3f, 0, 74.3f));
+        UserData.instance.location.Add("Sliver", new Vector3(126.7f, 0, 92.6f));
+        UserData.instance.location.Add("Hospital", new Vector3(177.2f, 0, 122.9f));
+        UserData.instance.location.Add("SchoolSceneDay", new Vector3(150f, 0, 107.8f));
+        UserData.instance.location.Add("PoliceOffice", new Vector3(288.6f, 0, 92.2f));
+        UserData.instance.location.Add("Shop", new Vector3(53.2f, 0, 91.8f));
+        UserData.instance.location.Add("Dentist", new Vector3(1.3f, 0, -7.2f));
+        UserData.instance.location.Add("TCM", new Vector3(-1.4f, 0, -8.7f));
+        UserData.instance.location.Add("Psychiatrist", new Vector3(1.5f, 0, 11.7f));
+
+        UserData.instance.salary.Add("实习生", 2500);
+        UserData.instance.salary.Add("住院医师", 4000);
+
+        UserData.instance.home.Add("Iron", 25);
+        UserData.instance.home.Add("Copper", 35);
     }
 
 }

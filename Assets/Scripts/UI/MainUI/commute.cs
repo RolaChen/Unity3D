@@ -16,7 +16,7 @@ public class commute : MonoBehaviour
     public Button _sliver;
     public Button _golden;
     public Button _shop;
-    Button _home;
+    public Button _home;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +28,14 @@ public class commute : MonoBehaviour
         _sliver.onClick.AddListener(click_sliver);
         _golden.onClick.AddListener(click_golden);
         _shop.onClick.AddListener(click_shop);
+        _home.onClick.AddListener(click_home);
+    }
+
+    private void click_home()
+    {
+        PlayerData.instance.money = PlayerData.instance.money - 2;
+        StartCoroutine(UserData.instance.update());
+        SceneManager.LoadScene(PlayerData.instance.home);
     }
 
     private void click_shop()

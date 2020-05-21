@@ -11,6 +11,9 @@ using UnityEngine.UI;
 public class UserData : Singleton<UserData>
 {
     public Dictionary<string, string> map = new Dictionary<string, string>();
+    public Dictionary<string, Vector3> location = new Dictionary<string, Vector3>();
+    public Dictionary<string, int> salary = new Dictionary<string, int>();
+    public Dictionary<string, int> home = new Dictionary<string, int>();
     private int[] months = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     private string url = "http://106.14.161.155/QianZhi/update.php";
 
@@ -26,6 +29,7 @@ public class UserData : Singleton<UserData>
         add.AddField("day", PlayerData.instance.day);
         add.AddField("time", PlayerData.instance.time);
         add.AddField("id", PlayerData.instance.id);
+        add.AddField("home", "Iron");
         UnityWebRequest webRequest = UnityWebRequest.Post(url, add);
         Debug.Log("update4");
         yield return webRequest.SendWebRequest();
@@ -43,6 +47,8 @@ public class UserData : Singleton<UserData>
     {
         if (PlayerData.instance.time == "上午")
             PlayerData.instance.time = "下午";
+        else if (PlayerData.instance.time == "下午")
+            PlayerData.instance.time = "晚上";
         else
         {
             PlayerData.instance.time = "上午";
@@ -51,11 +57,11 @@ public class UserData : Singleton<UserData>
             {
                 PlayerData.instance.day = 1;
                 PlayerData.instance.month++;
+                PlayerData.instance.money += salary[PlayerData.instance.level];
                 if (PlayerData.instance.month > 12)
                     PlayerData.instance.month = 1;
             }
-
+            PlayerData.instance.emotion += home[PlayerData.instance.home];
         }
-    }
-    
+    }   
 }

@@ -23,4 +23,5 @@ public class PlayerData:Singleton<PlayerData>
     public int day;
     public string time;
     public string pre_Scene;
+    public string home;
 }

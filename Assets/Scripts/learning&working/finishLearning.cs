@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class finishLearning : MonoBehaviour
 {
     Button _return;
+    public Text time;
 
     void Start()
     {
@@ -20,5 +21,10 @@ public class finishLearning : MonoBehaviour
         SceneManager.LoadScene(PlayerData.instance.pre_Scene);
     }
 
-    
+    private void Update()
+    {
+        time.text = "现在是" + PlayerData.instance.month.ToString() + "月" +
+            PlayerData.instance.day.ToString() + "日 " + PlayerData.instance.time;
+    }
+
 }

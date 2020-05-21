@@ -77,6 +77,10 @@ public class Login : MonoBehaviour
                 PlayerData.instance.month = int.Parse(get[10]);
                 PlayerData.instance.day = int.Parse(get[11]);
                 PlayerData.instance.time = get[12];
+                Debug.Log(get.Length);
+                if(get.Length==14)
+                    PlayerData.instance.home = get[13];
+                Debug.Log(PlayerData.instance.home);
                 Debug.Log(PlayerData.instance.month + PlayerData.instance.time);
                 switch (get[3])
                 {
@@ -95,7 +99,9 @@ public class Login : MonoBehaviour
                 }
                 PlayerPrefs.SetString("name", address);
                 PlayerPrefs.SetString("password", password);
-                SceneManager.LoadScene("LoginScene");
+                Debug.Log("hhh"+PlayerPrefs.GetString("Last"));
+                if(PlayerPrefs.GetString("Last")!=null|| PlayerPrefs.GetString("Last")!="Login")
+                    SceneManager.LoadScene(PlayerPrefs.GetString("Last"));
                 Debug.Log(PlayerData.instance.gender);
             }
             _message.text = get[0];          

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Exit : MonoBehaviour
@@ -19,6 +20,8 @@ public class Exit : MonoBehaviour
 
     private void exit()
     {
+        Scene scene = SceneManager.GetActiveScene();
+        PlayerPrefs.SetString("Last", scene.name);
         if (PlayerData.instance.id != null)
             StartCoroutine(live());
         else

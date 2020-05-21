@@ -24,6 +24,11 @@ public class PlayerMovement : MonoBehaviour
         agent.SetDestination(point);
     }
 
+    public void born(Vector3 vector)
+    {
+        agent.Warp(vector);
+    }
+
     private void Update()
     {
         if (Mathf.Abs(agent.remainingDistance) < 0.01f)

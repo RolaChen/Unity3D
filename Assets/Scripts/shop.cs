@@ -24,6 +24,8 @@ public class shop : MonoBehaviour
         button5.onClick.AddListener(bt5);
         button6.onClick.AddListener(bt6);
         exit.onClick.AddListener(ex);
+        Scene scene = SceneManager.GetActiveScene();
+        PlayerData.instance.pre_Scene = scene.name;
     }
 
     private void ex()

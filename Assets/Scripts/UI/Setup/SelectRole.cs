@@ -13,7 +13,7 @@ public class SelectRole : MonoBehaviour
     private string _gender="男", _career= "医生";
     private string family;
     public GameObject[] characterPrefebs;
-    Dictionary<string, GameObject> characters;
+    Dictionary<int, GameObject> characters;
     public GameObject player;
     private Text _family;
     private string url = "http://106.14.161.155/QianZhi/regist_player.php";
@@ -34,16 +34,16 @@ public class SelectRole : MonoBehaviour
         }
 
         //character initialize
-        characters = new Dictionary<string, GameObject>();
+        characters = new Dictionary<int, GameObject>();
         for(i=0;i<characterPrefebs.Length;i++)
         {
             GameObject temp = GameObject.Instantiate(characterPrefebs[i],
                 player.transform.position, player.transform.rotation) as GameObject;
             temp.transform.parent = transform;
             temp.SetActive(false);
-            characters.Add(characterPrefebs[i].name, temp);
+            characters.Add(i, temp);
         }
-        characters["doctor1"].SetActive(true);
+        characters[0].SetActive(true);
 
         //family initialize
 
@@ -69,15 +69,15 @@ public class SelectRole : MonoBehaviour
                     break;
                 case "doctor":
                     _career = "医生";
-                    characters["doctor1"].SetActive(true);
+                    characters[0].SetActive(true);
                     break;
                 case "teacher":
                     _career = "老师";
-                    characters["teacher1"].SetActive(true);
+                    characters[2].SetActive(true);
                     break;
                 case "police":
                     _career = "警察";
-                    characters["police1"].SetActive(true);
+                    characters[1].SetActive(true);
                     break;
             }
         }
@@ -90,13 +90,13 @@ public class SelectRole : MonoBehaviour
                 case "female":
                     break;
                 case "doctor":
-                    characters["doctor1"].SetActive(false);
+                    characters[0].SetActive(false);
                     break;
                 case "teacher":
-                    characters["teacher1"].SetActive(false);
+                    characters[2].SetActive(false);
                     break;
                 case "police":
-                    characters["police1"].SetActive(false);
+                    characters[1].SetActive(false);
                     break;
             }
         }

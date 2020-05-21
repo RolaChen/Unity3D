@@ -32,10 +32,14 @@ public class select : MonoBehaviour
 
     private void click_work()
     {
-        if(PlayerPrefs.GetInt(UserData.instance.map[PlayerData.instance.pre_Scene])<2)
+        if(PlayerData.instance.time=="晚上")
+        {
+            text.text = "现在是晚上了，请先回家休息，明天再来";
+        }
+        else if(PlayerPrefs.GetInt(UserData.instance.map[PlayerData.instance.pre_Scene])<2)
         {
             text.text = "该科室学习不足两次，不能开始做任务";
-        }
+        }      
         else
         {
             working.SetActive(true);
@@ -45,8 +49,16 @@ public class select : MonoBehaviour
 
     private void click_learn()
     {
-        learning.SetActive(true);
-        myself.SetActive(false);
+        if (PlayerData.instance.time == "晚上")
+        {
+            text.text = "现在是晚上了，请先回家休息，明天再来";
+        }
+        else
+        {
+            learning.SetActive(true);
+            myself.SetActive(false);
+        }
+
     }
 
     // Update is called once per frame
